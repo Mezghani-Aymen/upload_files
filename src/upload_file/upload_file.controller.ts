@@ -9,9 +9,15 @@ import { FileInterceptor } from '@nestjs/platform-express';
 export class UploadFileController {
   constructor() {}
 
-  @Post()
+  @Post('/single')
   @UseInterceptors(FileInterceptor('file'))
-  uploadimage(@UploadedFile() file) {
+  UploadSingleFile(@UploadedFile() file: Express.Multer.File) {
+    console.log(file);
+  }
+
+  @Post('/ùultiple ')
+  @UseInterceptors(FileInterceptor('file'))
+  UploadMultipleFiles(@UploadedFile() file) {
     console.log(file);
   }
 }
