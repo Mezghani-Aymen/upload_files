@@ -1,4 +1,9 @@
-import { Controller } from '@nestjs/common';
+import { Controller, Post } from '@nestjs/common';
 
 @Controller('upload-file')
-export class UploadFileController {}
+export class UploadFileController {
+  constructor() {}
+
+  @Post()
+  uploadimage() {}
+}
